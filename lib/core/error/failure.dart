@@ -17,6 +17,10 @@ final class TimeoutFailure extends Failure {
   const TimeoutFailure([super.message = 'Connection timed out.']);
 }
 
+final class AuthFailure extends Failure {
+  const AuthFailure([super.message = 'Authentication failed.']);
+}
+
 final class ServerFailure extends Failure {
   final int? statusCode;
   const ServerFailure([super.message = 'Server error.', this.statusCode]);
@@ -24,6 +28,10 @@ final class ServerFailure extends Failure {
 
 final class ParsingFailure extends Failure {
   const ParsingFailure([super.message = 'Unexpected data from server.']);
+}
+
+final class StorageFailure extends Failure {
+  const StorageFailure([super.message = 'Could not read or write local data.']);
 }
 
 final class UnexpectedFailure extends Failure {
